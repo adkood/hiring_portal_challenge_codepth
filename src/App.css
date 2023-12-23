@@ -1,0 +1,84 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cont {
+  width: 80%;
+  height: 90%;
+  border-radius: 5px;
+  border: 1px solid;
+  display: flex;
+}
+
+.cont__left {
+  width: 75%;
+  height: 100%;
+}
+
+.cont__left__search {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cont__left__jobArea {
+  width: 100%;
+  height: 85%;
+  overflow: auto;
+}
+
+.cont__right {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  border-left: 1px solid lightseagreen;
+  /* align-items: center; */
+}
+
+.cont__left__singleJob {
+  width: 96%;
+  height: 100px;
+  margin: 10px;
+  /* margin-bottom: 5px; */
+  border: 1px solid lightseagreen;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: lightseagreen;
+}
+
+.cont__right__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cont__right__form > *{
+  margin: 5px;
+}
+
+.btn {
+  width: 110px;
+  height: 40px;
+  color: aliceblue;
+  background-color: lightseagreen;
+  border-style: "none";
+}
+
+.btn__apply {
+  width: 110px;
+  height: 40px;
+  color: aliceblue;
+  background-color: lightseagreen;
+  border-style: "none";
+}
