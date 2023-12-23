@@ -21,9 +21,16 @@ const SingleJob = ({ job, log}) => {
 
     return (
         <div className='cont__left__singleJob'>
-            <section style={{ width: "60%", height: "100%", display: "flex", margin: "10px", justifyContent: "center", flexDirection: "column" }}>
+            <section style={{ width: "40%", height: "100%", display: "flex", margin: "10px", justifyContent: "center", flexDirection: "column" }}>
                 <span>{job.title}</span>
                 <span>{job.description}</span>
+                <span>{job.requiredSkills}</span>
+            </section>
+            <section style={{ width: "10%", height: "100%", display: "flex", margin: "10px", justifyContent: "center", flexDirection: "column" }}>
+                <span>{job.experience}</span>
+            </section>
+            <section style={{ width: "15%", height: "100%", display: "flex", margin: "10px", justifyContent: "center", flexDirection: "column" }}>
+                <span>{job.company}</span>
             </section>
             <button className='btn__apply' onClick={onApplyHandler}>Apply now</button>
         </div>

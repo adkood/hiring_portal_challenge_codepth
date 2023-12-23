@@ -48,8 +48,8 @@ function App() {
           <section className='cont__left__search'>
             <h1 style={{ color: "lightseagreen", fontSize: "2rem", margin: "10px" }}>Jobs</h1>
             <SearchBar width={"80"} height={"40"} color={'lightseagreen'} />
-            {!log && <button onClick={ontoggle}>signup/login</button>}
-            {log && <button onClick={onLogoutHandler}>logout</button>}
+            {!log && <button className='btn' onClick={ontoggle}>signup/login</button>}
+            {log && <button className='btn' onClick={onLogoutHandler}>logout</button>}
           </section>
           <section className='cont__left__jobArea'>
             {
@@ -60,7 +60,7 @@ function App() {
           </section>
         </section>
         <section className="cont__right">
-          <JobEntry width={"90"} height={"85"} color={"lightseagreen"} />
+          <JobEntry width={"90"} height={"85"} color={"lightseagreen"} log={log}/>
         </section>
       </section>
     </div>

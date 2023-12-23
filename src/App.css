@@ -72,13 +72,15 @@
   height: 40px;
   color: aliceblue;
   background-color: lightseagreen;
+  border-radius: 5px;
   border-style: "none";
 }
 
 .btn__apply {
-  width: 110px;
+  width: 100px;
   height: 40px;
   color: aliceblue;
+  border-radius: 5px;
   background-color: lightseagreen;
   border-style: "none";
 }

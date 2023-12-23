@@ -4,8 +4,9 @@ import '../App.css'
 import useAddJobs from '../apis/useAddJobs';
 import { modalActions } from '../store';
 import { useDispatch } from 'react-redux';
+import { useToast } from '@chakra-ui/react';
 
-const JobEntry = ({ width, height, color }) => {
+const JobEntry = ({ width, height, color, log }) => {
 
     const dispatch = useDispatch();
 
@@ -16,12 +17,25 @@ const JobEntry = ({ width, height, color }) => {
     const [e, sete] = useState("");
     const [link, setLink] = useState("");
     const { addJob } = useAddJobs();
+    const toast = useToast();
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        if (c && t && d && s && e && link) {
-            addJob(c, t, d, s, e, link);
-            dispatch(modalActions.changeRender());
+        if(log)
+        {
+            if (c && t && d && s && e && link) {
+                addJob(c, t, d, s, e, link);
+                dispatch(modalActions.changeRender());
+            }
+        }
+        else
+        {
+            toast({
+                title: 'You are not Logged In.',
+                status: 'error',
+                duration: 2000,
+                isClosable: true,
+            });
         }
         setc("");
         setd("");
