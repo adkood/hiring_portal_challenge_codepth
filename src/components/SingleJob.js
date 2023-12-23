@@ -1,13 +1,31 @@
 import react from 'react';
 
-const SingleJob = ({job}) => {
+import { useToast } from '@chakra-ui/react';
+
+const SingleJob = ({ job, log}) => {
+    const toast = useToast();
+
+    const onApplyHandler = () => {
+        if (log) {
+
+        }
+        else {
+            toast({
+                title: 'You are not Logged In.',
+                status: 'error',
+                duration: 2000,
+                isClosable: true,
+            });
+        }
+    }
+
     return (
         <div className='cont__left__singleJob'>
-            <section style={{ width: "60%", height: "100%", display: "flex", margin: "10px" ,justifyContent: "center", flexDirection: "column"}}>
-            <span>{job.title}</span> 
-            <span>{job.description}</span>
+            <section style={{ width: "60%", height: "100%", display: "flex", margin: "10px", justifyContent: "center", flexDirection: "column" }}>
+                <span>{job.title}</span>
+                <span>{job.description}</span>
             </section>
-            <button className='btn__apply'>Apply now</button>    
+            <button className='btn__apply' onClick={onApplyHandler}>Apply now</button>
         </div>
     );
 }

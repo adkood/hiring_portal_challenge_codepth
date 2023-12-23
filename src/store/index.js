@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialModalState = {
     isSignup: false,
     isLoggedIn: false,
+    render: 0,
 }
 
 const modalSlice = createSlice({
@@ -11,9 +12,14 @@ const modalSlice = createSlice({
     initialState: initialModalState,
     reducers: {
         signupToggle(state) {
-            if (state.isLogin) state.isLogin = false;
             state.isSignup = !state.isSignup;
         },
+        isLoggedInToggle(state) {
+            state.isLoggedIn = !state.isLoggedIn;
+        },
+        changeRender(state) {
+            state.render = state.render+1;
+        }
     }
 })
 

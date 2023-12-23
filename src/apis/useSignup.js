@@ -28,7 +28,7 @@ const useSignUp = () => {
         }
     };
 
-    return signUp;
+    return {signUp};
 };
 
 export default useSignUp;

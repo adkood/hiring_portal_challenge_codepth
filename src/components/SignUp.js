@@ -10,18 +10,23 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 
-import signUp from "../apis/useSignup";
+import useSignUp from "../apis/useSignup";
 
 import { useDispatch } from "react-redux";
 import { modalActions } from "../store";
 import { useSelector } from "react-redux";
+import useLogin from "../apis/useLogin";
 
 const Signup = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const signUp = useSelector((state) => state.modal.isSignup);
+    const sign = useSelector((state) => state.modal.isSignup);
+    const dispatch = useDispatch(); 
+
+    const {signUp} = useSignUp();
+    const {login} = useLogin();
 
     const OverlayTwo = () => (
         <ModalOverlay
@@ -35,17 +40,26 @@ const Signup = () => {
     const onSignupClickHandler = () => {
         if (email && password) {
             signUp(email, password);
+            dispatch(modalActions.changeRender());
+        }
+        setEmail("");
+        setPassword("");
+    }
+    const onLoginClickHandler = () => {
+        if (email && password) {
+            login(email, password);
+            dispatch(modalActions.changeRender());
         }
         setEmail("");
         setPassword("");
     }
 
     const ontoggle = () => {
-        
+        dispatch(modalActions.signupToggle());
     }
 
     return (
-        <Modal isCentered isOpen={signUp} onClose={ontoggle}>
+        <Modal isCentered isOpen={sign} onClose={ontoggle}>
             <OverlayTwo />
             <ModalContent bgColor="transparent" position="fixed" left="0">
                 <ModalBody>
@@ -100,6 +114,7 @@ const Signup = () => {
                                     height={"70%"}
                                     margin={"2px"}
                                     borderRadius="10px"
+                                    onClick={onLoginClickHandler}
                                 >
                                     Login
                                 </Button>
@@ -123,6 +138,7 @@ const Signup = () => {
                                     height={"70%"}
                                     margin={"2px"}
                                     borderRadius="10px"
+                                    onClick={ontoggle}
                                 >
                                     Cancel
                                 </Button>

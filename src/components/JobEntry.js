@@ -2,8 +2,12 @@ import react, { useEffect, useState } from 'react';
 import '../App.css'
 
 import useAddJobs from '../apis/useAddJobs';
+import { modalActions } from '../store';
+import { useDispatch } from 'react-redux';
 
 const JobEntry = ({ width, height, color }) => {
+
+    const dispatch = useDispatch();
 
     const [c, setc] = useState("");
     const [t, sett] = useState("");
@@ -17,6 +21,7 @@ const JobEntry = ({ width, height, color }) => {
         event.preventDefault();
         if (c && t && d && s && e && link) {
             addJob(c, t, d, s, e, link);
+            dispatch(modalActions.changeRender());
         }
         setc("");
         setd("");
