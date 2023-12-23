@@ -12,7 +12,6 @@ import useLogout from './apis/useLogout';
 
 function App() {
   const [appRender, setAppRender] = useState(0);
-  const [searchData, setSearchData] = useState("");
   const render = useSelector((state) => state.modal.render);
   const { log } = useAuthState();
   const { logout } = useLogout();
@@ -43,7 +42,7 @@ function App() {
         <section className="cont__left">
           <section className='cont__left__search'>
             <h1 style={{ color: "lightseagreen", fontSize: "2rem", margin: "10px" }}>Jobs</h1>
-            <SearchBar width={"80"} height={"40"} color={'lightseagreen'} allJobs={allJobs} setAllJobs={setAllJobs} />
+            <SearchBar width={"80"} height={"40"} color={'lightseagreen'} allJobs={allJobs} setAllJobs={setAllJobs} setAppRender={setAppRender}/>
             {!log && <button className='btn' onClick={ontoggle}>signup/login</button>}
             {log && <button className='btn' onClick={onLogoutHandler}>logout</button>}
           </section>

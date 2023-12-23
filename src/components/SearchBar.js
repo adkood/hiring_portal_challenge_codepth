@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const SearchBar = ({ width, height, color = "black", allJobs, setAllJobs }) => {
+const SearchBar = ({ width, height, color = "black", allJobs, setAllJobs, setAppRender}) => {
     const [searchData, setSearchData] = useState("");
     // implemented Debouncing to tackle multiple search calls
     useEffect(() => {
@@ -19,6 +19,7 @@ const SearchBar = ({ width, height, color = "black", allJobs, setAllJobs }) => {
 
     const onChangeHandler = (e) => {
         setSearchData(e.target.value);
+        setAppRender((prev) => prev+1);
     };
 
     return (
