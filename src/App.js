@@ -15,7 +15,7 @@ import useLogout from './apis/useLogout';
 function App() {
 
   const [appRender, setAppRender] = useState(0);
-  const render = useSelector((state) => { state.modal.render });
+  const render = useSelector((state) => state.modal.render);
   const { log } = useAuthState();
   const { logout } = useLogout();
   // console.log(log);
