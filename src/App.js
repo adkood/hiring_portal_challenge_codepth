@@ -5,6 +5,7 @@ import SingleJob from './components/SingleJob';
 import getAllJobs from './apis/getAllJobs';
 import JobEntry from './components/JobEntry';
 import SearchBar from './components/SearchBar';
+import Signup from './components/SignUp';
 function App() {
   const [allJobs, setAllJobs] = useState([]);
   useEffect(() => {
@@ -14,6 +15,7 @@ function App() {
   console.log(allJobs);
   return (
     <div className="App">
+      <Signup/>
       <section className="cont">
         <section className="cont__left">
           <section className='cont__left__search'>
