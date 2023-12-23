@@ -32,8 +32,8 @@ const Signup = () => {
         <ModalOverlay
             bg="none"
             backdropFilter="auto"
-            backdropInvert="30%"
-            backdropBlur="2px"
+            backdropInvert="1%"
+            backdropBlur="1px"
         />
     );
 
