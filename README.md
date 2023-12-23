@@ -30,5 +30,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 # Deployed on vercel
 
-Open [https://hiring-portal-challenge-codepth-pied.vercel.app/](http://localhost:3000) to view it in your browser.
+Open [https://hiring-portal-challenge-codepth-pied.vercel.app/]( https://hiring-portal-challenge-codepth-pied.vercel.app/) to view it in your browser.
 
